@@ -1,0 +1,28 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #4b4b4b;
+    margin: 0;
+    padding: 0;
+}	
+
+dialog[open]{ /* Paso 1: Estado Inicial */
+    scale: 1;
+    transition: scale 0.3s ease-in-out,
+        translate 1s ease;
+    translate: 0px 0px;
+    @starting-style { /* Paso 0. estado inicial */
+        scale: 0;
+        translate: 0px 100px;
+    }
+}
+
+
+dialog { /* Paso 2: Al cerralo*/
+    transition: scale 0.3s ease-in-out,
+        display 0.3s allow-discrete;
+    scale: 0;
+}
+
